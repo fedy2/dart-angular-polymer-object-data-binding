@@ -1,0 +1,15 @@
+name: angularpolymer
+description: A sample web application
+dependencies:
+  angular: '0.14.0'
+  angular_node_bind: '0.2.0'
+  browser: any
+  polymer: '>=0.13.0 <0.14.0'
+  shadow_dom: any
+dependency_overrides:
+  code_transformers: '>=0.2.0 <0.3.0'
+  html5lib: '>=0.12.0 <0.13.0'
+transformers:
+- angular
+- polymer:
+    entry_points: web/angularpolymer.html

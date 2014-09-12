@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dart angular polymer object data binding</title>
+    
+    <script src="packages/web_components/platform.js"></script>
+    <script src="packages/web_components/dart_support.js"></script>
+    <link rel="import" href="packages/polymer/polymer.html">
+    
+    <link rel="import" href="simple_element.html">
+    <link rel="import" href="person_element.html">
+    
+    <link rel="stylesheet" href="angularpolymer.css">
+    
+  </head>
+  <body>
+    <h1>Dart angular polymer object data binding</h1>
+    
+    <div person-container ng-cloak>
+	    <h2>Simple elements</h2>
+	    <div ng-repeat="person in ctrl.persons">
+	      <div>{{person.name}}</div>
+ 	      <simple-element name="{{person.name}}" surname="{{person.surname}}"></simple-element>
+	    </div>
+	    
+	    <h2>Person elements</h2>
+      <div ng-repeat="person in ctrl.persons">
+        <div>{{person.name}}</div>
+        <person-element person="[[person]]"></person-element>
+      </div>
+    </div>
+    
+    <script async type="application/dart" src="angularpolymer.dart"></script>
+    <script async src="packages/browser/dart.js"></script>
+  </body>
+</html>
